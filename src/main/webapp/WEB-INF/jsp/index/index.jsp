@@ -12,7 +12,7 @@
       <div class="container">
         <div class="split left">
           <h1>Man</h1>
-          <a href="#" class="button">Read More</a>
+          <a href="#" class="button">asd More</a>
         </div>
         <div class="split right">
           <h1>Female</h1>
