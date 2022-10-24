@@ -50,7 +50,7 @@
 		) 	
  	</insert>
  	
- 	<select id="selectMemberByLoginId" parameterType="map" resultType="com.ahnbang.member.model.Member">
+ 	<select id="selectMemberByLoginId" parameterType="string" resultType="com.ahnbang.member.model.Member">
 		SELECT 
 			`member_id`
 			,`loginid`
@@ -65,6 +65,15 @@
 		WHERE
 			`loginid` = #{loginid}
 			
+	</select>
+	
+	<select id="selectPasswordByLoginId" parameterType="string" resultType="string">
+		SELECT 
+			`password`
+		FROM
+			`member`
+		WHERE
+			`loginid` = #{loginid}
 	</select>
 	
 	<select id="selectMemberById" parameterType="int" resultType="com.ahnbang.member.model.Member">
@@ -82,5 +91,9 @@
 		WHERE
 			`member_id` = #{member_id}
 	</select>
+	
+
+	
+	
  
  </mapper>

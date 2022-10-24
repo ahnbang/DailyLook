@@ -1,7 +1,5 @@
 package com.ahnbang.member.model;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,14 +77,18 @@ public class MemerController {
 			@RequestParam("password_login") String password_login,
 			HttpSession session) {
 		
+		/*
+		Member member = memberBO.getMemberByLoginId(loginid_login);
+
+		return ResponseUtil.FAIL("테스트입니다", member);
+		*/
+		
 		Member member = memberBO.getMemberByLoginId(loginid_login);
 		
-		return ResponseUtil.FAIL("테스트입니다", member.getPawssword());
-		/*
 		if (member != null) {
+			String encodedPassword  = memberBO.getPasswordByLoginId(loginid_login);
 			
-			
-			if(passwordEncoder.matches(password_login, member.getPawssword())) {
+			if(passwordEncoder.matches(password_login, encodedPassword)) {
 				session.setAttribute("loginid", member.getLoginid());
 				session.setAttribute("name", member.getName());
 				session.setAttribute("member_id", member.getMember_id());
@@ -94,14 +96,12 @@ public class MemerController {
 			}
 			
 			else {
-				String encodedPassword = member.getPawssword();
-				
-				return ResponseUtil.FAIL("비밀번호가 일치하지 않습니다.", password_login + "++" + member.getPawssword());
+				return ResponseUtil.FAIL("비밀번호가 일치하지 않습니다.", password_login + "+테스트용 데이터 출력+" + encodedPassword);
 				}
 		}else {
 			return ResponseUtil.FAIL("일치하는 아이디가 없습니다", loginid_login);
 		}
-		*/
+		
 		
 		
 		

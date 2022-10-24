@@ -34,5 +34,8 @@ public class MemberBO {
 		return memberDAO.selectMemberById(member_id);
 	}
 	
+	public String getPasswordByLoginId (String loginid) {
+		return memberDAO.selectPasswordByLoginId(loginid);
+	}
 
 }

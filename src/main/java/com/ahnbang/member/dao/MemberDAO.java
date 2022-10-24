@@ -19,13 +19,14 @@ public interface MemberDAO {
 	
 	
 	public Member selectMemberByLoginId(
-			@Param("loginid") String loginid
-			);
+			@Param("loginid") String loginid);
 	
 	public List<Member> selectMemberList();
 	
 	public int existLoginId(String loginid);
 	
 	public Member selectMemberById(int member_id);
+	
+	public String selectPasswordByLoginId(String loginid);
 
 }
