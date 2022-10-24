@@ -1,6 +1,6 @@
 package com.ahnbang.member.model;
 
-public enum Member_Role {
+public enum MemberRole {
 	
 	USER, ADMIN
 

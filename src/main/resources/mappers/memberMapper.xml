@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace ="com.ahnbang.member.dao.MemberDAO">
+ 
+ 	<select id="selectMemberList" resultType="com.ahnbang.member.model.Member">
+		SELECT
+			`member_id`
+			,`loginid`
+			,`name`
+			,`password`
+			,`email`
+			,`role`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`member`
+	</select>
+ 
+ 	<select id="existLoginId" parameterType="string" resultType="int">
+		SELECT 
+			COUNT(1) 
+		FROM
+			`member`
+		WHERE 
+			`loginid` = #{loginid}
+	</select>
+ 
+ 	<insert id ="insertMember" parameterType="map">
+		INSERT INTO `member`
+		(
+			`loginid`
+			, `name`
+			, `password`
+			, `email`
+			, `role`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES
+		(
+			#{loginid}
+			, #{name}
+			, #{password}
+			, #{email}
+			, #{role}
+			, NOW()
+			, NOW()
+		) 	
+ 	</insert>
+ 	
+ 	<select id="selectMemberByLoginId" parameterType="map" resultType="com.ahnbang.member.model.Member">
+		SELECT 
+			`member_id`
+			,`loginid`
+			,`name`
+			,`password`
+			,`email`
+			,`role`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`member`
+		WHERE
+			`loginid` = #{loginid}
+			
+	</select>
+	
+	<select id="selectMemberById" parameterType="int" resultType="com.ahnbang.member.model.Member">
+		SELECT 
+			`member_id`
+			,`loginid`
+			,`name`
+			,`password`
+			,`email`
+			,`role`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`member`
+		WHERE
+			`member_id` = #{member_id}
+	</select>
+ 
+ </mapper>

@@ -1,25 +1,27 @@
 package com.ahnbang;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ahnbang.common.Result;
+import com.ahnbang.response.Response;
+import com.ahnbang.response.ResponseUtil;
 
-@RestController
-
+@Controller
 public class TestController {
 	@RequestMapping("/")
 	public String test() {
 		
-		Result<String> resultes = new Result<>();
-		resultes.setStatusCode(5);
-		resultes.setData("yes");
-		
-
-		return resultes.getData();
-	
-
+		return "/index/index"; 
 	}
 	
+	
+	@RequestMapping("/test")
+	@ResponseBody
+	public String test2() {
+		Response result = ResponseUtil.SUCCESS("회원가입에 성공했습니다.", "success");
+		return result.getData().toString(); 
+	}
+
 
 }

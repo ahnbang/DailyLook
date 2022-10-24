@@ -18,6 +18,7 @@ public class PasswordEncoderTest {
 	   void passwordEncode() {
 	      // given
 	      String rawPassword = "12345678";
+	      String rawPassword2 = "12345678";
 
 	      // when
 	      String encodedPassword = passwordEncoder.encode(rawPassword);
@@ -25,7 +26,8 @@ public class PasswordEncoderTest {
 	      // then
 	      assertAll(
 	            () -> assertNotEquals(rawPassword, encodedPassword),
-	            () -> assertTrue(passwordEncoder.matches(rawPassword, encodedPassword))
+	            () -> assertTrue(passwordEncoder.matches(rawPassword2, encodedPassword))
+	            
 	      );
 	   } 
 	}

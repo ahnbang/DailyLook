@@ -5,8 +5,8 @@ import java.util.Date;
 public class Member {
 
 	private int member_id;
-	private String userid;
-	private String username;
+	private String loginid;
+	private String name;
 	private String pawssword;
 	private String email;
 	private String role_type;
@@ -19,17 +19,17 @@ public class Member {
 	public void setMember_id(int member_id) {
 		this.member_id = member_id;
 	}
-	public String getUserid() {
-		return userid;
+	public String getLoginid() {
+		return loginid;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setLoginid(String loginid) {
+		this.loginid = loginid;
 	}
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPawssword() {
 		return pawssword;
@@ -60,8 +60,7 @@ public class Member {
 	}
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
-	}
-	
+	}	
 	
 }
 
