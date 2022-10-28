@@ -194,8 +194,7 @@ $(document).ready(function() {
 		$.post(url, data)
 		.done(function(data) {
 			if (data.status == "SUCCESS") {
-				alert(data.message);
-        alert(data.data)				
+				alert(data.message);			
 				location.href="/member/sign_in_view";
 			} else {
 				alert(data.message);
@@ -228,7 +227,7 @@ $(document).ready(function() {
 				location.href="/"; 
 			} else {
 				alert(data.message);
-        alert(data.data)
+
 			}
 		}); 
 	});

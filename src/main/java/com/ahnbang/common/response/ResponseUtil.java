@@ -1,4 +1,4 @@
-package com.ahnbang.response;
+package com.ahnbang.common.response;
 
 
 public class ResponseUtil {

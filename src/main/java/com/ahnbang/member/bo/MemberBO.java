@@ -14,6 +14,7 @@ public class MemberBO {
 	@Autowired
 	private MemberDAO memberDAO;
 	
+	
 	public int existLoginId(String loginid) {
 		return memberDAO.existLoginId(loginid);
 	}

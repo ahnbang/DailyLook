@@ -9,7 +9,7 @@ public class Member {
 	private String name;
 	private String pawssword;
 	private String email;
-	private String role_type;
+	private String role;
 	private Date createdAt;
 	private Date updatedAt;
 	
@@ -43,11 +43,11 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getRole_type() {
-		return role_type;
+	public String getRole() {
+		return role;
 	}
-	public void setRole_type(String role_type) {
-		this.role_type = role_type;
+	public void setRole(String role) {
+		this.role = role;
 	}
 	public Date getCreatedAt() {
 		return createdAt;

@@ -1,4 +1,4 @@
-package com.ahnbang.member.model;
+package com.ahnbang.member;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.ahnbang.common.response.Response;
+import com.ahnbang.common.response.ResponseUtil;
 import com.ahnbang.member.bo.MemberBO;
-import com.ahnbang.response.Response;
-import com.ahnbang.response.ResponseUtil;
+import com.ahnbang.member.model.Member;
+import com.ahnbang.member.model.MemberRole;
 
 @Controller
 @RequestMapping("/member")
-public class MemerController {
+public class MemberController {
 	
 	@Autowired
 	private MemberBO memberBO;
@@ -86,6 +88,7 @@ public class MemerController {
 		Member member = memberBO.getMemberByLoginId(loginid_login);
 		
 		if (member != null) {
+			
 			String encodedPassword  = memberBO.getPasswordByLoginId(loginid_login);
 			
 			if(passwordEncoder.matches(password_login, encodedPassword)) {

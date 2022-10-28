@@ -4,15 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ahnbang.response.Response;
-import com.ahnbang.response.ResponseUtil;
+import com.ahnbang.common.response.Response;
+import com.ahnbang.common.response.ResponseUtil;
 
 @Controller
 public class TestController {
 	@RequestMapping("/")
-	public String test() {
-		
-		return "/index/index"; 
+	public String test() {		
+		return "/post/postupload"; 
 	}
 	
 	

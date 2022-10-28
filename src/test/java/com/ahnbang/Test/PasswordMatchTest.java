@@ -35,7 +35,7 @@ void passwordEncode() {
    member.setPawssword(password);
    member.setEmail(email);
    member.setName(name);
-   member.setRole_type(role);
+   member.setRole(role);
   
 
    
